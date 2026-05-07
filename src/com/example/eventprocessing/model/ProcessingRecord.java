@@ -1,5 +1,7 @@
 package com.example.eventprocessing.model;
 
+import com.example.eventprocessing.util.DemoTimeline;
+
 import java.time.Instant;
 
 public class ProcessingRecord {
@@ -15,7 +17,7 @@ public class ProcessingRecord {
         this.eventId = eventId;
         this.eventType = eventType;
         this.status = status;
-        this.updatedAt = Instant.now();
+        this.updatedAt = DemoTimeline.next();
     }
 
     public String getEventId() {
@@ -32,7 +34,7 @@ public class ProcessingRecord {
 
     public void setStatus(EventStatus status) {
         this.status = status;
-        this.updatedAt = Instant.now();
+        this.updatedAt = DemoTimeline.next();
     }
 
     public String getArchiveLocation() {
@@ -41,7 +43,7 @@ public class ProcessingRecord {
 
     public void setArchiveLocation(String archiveLocation) {
         this.archiveLocation = archiveLocation;
-        this.updatedAt = Instant.now();
+        this.updatedAt = DemoTimeline.next();
     }
 
     public String getErrorMessage() {
@@ -50,7 +52,7 @@ public class ProcessingRecord {
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
-        this.updatedAt = Instant.now();
+        this.updatedAt = DemoTimeline.next();
     }
 
     public int getRetryCount() {
@@ -59,7 +61,7 @@ public class ProcessingRecord {
 
     public void incrementRetryCount() {
         this.retryCount += 1;
-        this.updatedAt = Instant.now();
+        this.updatedAt = DemoTimeline.next();
     }
 
     public Instant getUpdatedAt() {

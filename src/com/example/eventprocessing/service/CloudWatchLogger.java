@@ -1,6 +1,7 @@
 package com.example.eventprocessing.service;
 
-import java.time.Instant;
+import com.example.eventprocessing.util.DemoTimeline;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,7 @@ public class CloudWatchLogger {
     }
 
     private void log(String level, String message, boolean stderr) {
-        String line = Instant.now() + " [" + level + "] " + message;
+        String line = DemoTimeline.next() + " [" + level + "] " + message;
         recentLogs.add(line);
         if (recentLogs.size() > 100) {
             recentLogs.remove(0);

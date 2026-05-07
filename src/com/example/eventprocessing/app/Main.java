@@ -23,7 +23,7 @@ public class Main {
         EventIngressApi api = new EventIngressApi(eventStore, pipeline);
         DashboardServer dashboardServer = new DashboardServer(8080, developerName, api, eventStore, pipeline, logger);
 
-        logger.info("Starting Yagnesh Reddy's cloud-native event processing web app");
+        logger.info("Starting Cloud Event Processing System");
         logger.info("Developer: " + developerName);
         pipeline.start();
         SampleEvents.build().forEach(api::publish);

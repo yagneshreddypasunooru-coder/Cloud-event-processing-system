@@ -5,8 +5,8 @@ import com.example.eventprocessing.model.EventType;
 import com.example.eventprocessing.model.ProcessingEvent;
 import com.example.eventprocessing.model.ProcessingRecord;
 import com.example.eventprocessing.store.EventStore;
+import com.example.eventprocessing.util.DemoTimeline;
 
-import java.time.Instant;
 import java.util.UUID;
 
 public class EventIngressApi {
@@ -24,7 +24,7 @@ public class EventIngressApi {
     }
 
     public ProcessingEvent publish(EventType eventType, String payload) {
-        ProcessingEvent event = new ProcessingEvent(UUID.randomUUID().toString(), eventType, payload, Instant.now());
+        ProcessingEvent event = new ProcessingEvent(UUID.randomUUID().toString(), eventType, payload, DemoTimeline.february(26, 11, 20));
         publish(event);
         return event;
     }

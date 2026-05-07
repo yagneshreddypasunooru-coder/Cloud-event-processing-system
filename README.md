@@ -1,4 +1,4 @@
-# Yagnesh Reddy Cloud-Native Event Processing System
+# Cloud Event Processing System
 
 This project was built for Yagnesh Reddy as a locally runnable Java web application that simulates an AWS-style event-driven backend using:
 
