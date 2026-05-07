@@ -1,0 +1,3 @@
+out/
+local-s3-bucket/
+.DS_Store

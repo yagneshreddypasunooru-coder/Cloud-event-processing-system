@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yagnesh Reddy Event Processing Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="page">
+    <header class="header">
+        <h1>Cloud-Native Event Processing System</h1>
+        <p class="subtext">Yagnesh Reddy</p>
+    </header>
+
+    <section class="section-box">
+        <div class="section-head">
+            <h2>Submit Event</h2>
+            <p>Create a new event and send it into the processing pipeline.</p>
+        </div>
+        <form id="event-form" class="event-form">
+            <label>
+                <span>Event Type</span>
+                <select name="eventType" required>
+                    <option value="ORDER_CREATED">ORDER_CREATED</option>
+                    <option value="PAYMENT_RECEIVED">PAYMENT_RECEIVED</option>
+                    <option value="FILE_UPLOADED">FILE_UPLOADED</option>
+                </select>
+            </label>
+            <label class="label-wide">
+                <span>Payload</span>
+                <textarea name="payload" rows="4" placeholder="orderId=1002,customerId=784,total=83.40" required></textarea>
+            </label>
+            <div class="actions">
+                <button type="submit">Submit Event</button>
+                <p id="form-status" class="form-status"></p>
+            </div>
+        </form>
+    </section>
+
+    <section class="two-column">
+        <article class="section-box">
+            <div class="section-head">
+                <h2>Metrics</h2>
+                <p>Current counters from the backend.</p>
+            </div>
+            <div id="metrics" class="metrics-list"></div>
+        </article>
+
+        <article class="section-box">
+            <div class="section-head">
+                <h2>Recent Logs</h2>
+                <p>Recent processing activity.</p>
+            </div>
+            <div id="logs" class="log-list"></div>
+        </article>
+    </section>
+
+    <section class="section-box">
+        <div class="section-head">
+            <h2>Event Status Table</h2>
+            <p>Each row shows the current event status.</p>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Retries</th>
+                    <th>Archive</th>
+                    <th>Error</th>
+                    <th>Updated</th>
+                </tr>
+                </thead>
+                <tbody id="events-table"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
